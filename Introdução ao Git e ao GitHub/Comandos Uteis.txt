@@ -1,0 +1,228 @@
+GIT e GitHub
+
+- Controle de Versão.
+- Armazenamento em numvem.
+- Trabalho em equipe.
+- Melhorar seu código.
+- Reconhecimento.
+
+GUI X CLI
+- cd = cd / pra ir pro C
+- dir = lista de diretórios na pasta em questão
+- mkdir
+- del/rmdir
+- cls limpa tela
+ 
+ 
+ rmdir workspace /S /Q
+ 
+Tópicos fundamentais para entender o funcionamento do Git
+- SHA1
+Algoritmo de Hash Seguro - Conjunto de caracteres de 40 digitos.
+openssl sha1
+$ openssl sha1 Mapeamento.txt
+
+$ echo 'conteudo' | git hash-object --stdin
+$ echo -e 'blob 9\0conteudo' | openssl sha1
+
+- Objetos fundamentais
+Blobs
+Trees
+Commits
+
+- Sistema distribuído
+- Segurança
+
+Chavez SSh e Tokens
+
+ssh-keygen -t ed25519 -C willian.marconato@bsoft.email
+
+$ cd /c/Users/MARCONATO/.ssh/
+
+$ cat id_ed25519.pub
+
+$ eval $(ssh-agent -s)
+Agent pid 2073
+
+$ ssh-add id_ed25519
+
+Token GitHub
+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
+
+
+Criando um commit
+- git init - Cria o repositório
+
+- git add
+- git commit
+
+
+
+$ git config --global user.email "willian.marconato@bsoft.email"
+$ git config --global user.name marconato
+
+
+$ git add *
+$ git commit -m "commit inicial"
+
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ mkdir receitas
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ ls
+Strogonoff.html  receitas/
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ mv Strogonoff.html ./receitas/
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ ls
+receitas/
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ cd receitas/
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas/receitas (master)
+$ ls
+Strogonoff.html
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas/receitas (master)
+$ cd ..
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ ls
+receitas/
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    Strogonoff.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        receitas/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ git add Strogonoff.html receitas/
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    Strogonoff.html -> receitas/Strogonoff.html
+
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ git commit -m "criação apsta receitas, move arquivo rpa receitas"
+[master c7e621a] criação apsta receitas, move arquivo rpa receitas
+ 1 file changed, 1 insertion(+)
+ rename Strogonoff.html => receitas/Strogonoff.html (92%)
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ echo > README.html
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ ls
+README.html  receitas/
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ git add *
+warning: LF will be replaced by CRLF in README.html.
+The file will have its original line endings in your working directory
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ ls
+README.html  receitas/
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   README.html
+
+
+MARCONATO@MARCONATO MINGW64 /c/teste/livro-receitas (master)
+$ git commit -m "adicionar Index"
+[master fde20a6] adicionar Index
+ 1 file changed, 5 insertions(+)
+ create mode 100644 README.html
+
+
+git pull origin master  >>> puxar pra resolver conflito
+
+git push origin master >>>enviar pro github
+
+na raiz...
+$ git clone https://github.com/laravel/laravel.git
+
+
+$ git remote -v
+origin  https://github.com/laravel/laravel.git (fetch)
+origin  https://github.com/laravel/laravel.git (push)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
